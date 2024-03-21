@@ -4,13 +4,14 @@ import RecipeItem from "./recipe-item/RecipeItem";
 import { useSelector } from "react-redux";
 
 function App() {
-  // const recipes = useSelector((state) => state);
   const recipes = [
     { id: 0, name: "Лазанья" },
     { id: 1, name: "Суши" },
     { id: 2, name: "Роллы" },
     { id: 3, name: "Пицца" },
   ];
+  const favorites = useSelector((state) => state.favorites);
+  console.log("🚀 ~ App ~ favorites:", favorites);
 
   return (
     <div>
