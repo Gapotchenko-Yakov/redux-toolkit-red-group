@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { reducer as favoriteReducer } from "./favorites/favorites";
+import { reducer as favoriteReducer } from "./favorites/favorites.slice";
 
 const reducers = combineReducers({
   favorites: favoriteReducer,
