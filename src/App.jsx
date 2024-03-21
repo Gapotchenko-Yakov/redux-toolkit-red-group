@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-import RecipeItem from "./recipe-item/RecipeItem";
+import RecipeItem from "./components/recipe-item/RecipeItem";
 import { useSelector } from "react-redux";
+import Header from "./components/header/Header";
+import { useFavorites } from "./hooks/useFavorites";
 
 function App() {
   const recipes = [
@@ -10,18 +12,18 @@ function App() {
     { id: 2, name: "Роллы" },
     { id: 3, name: "Пицца" },
   ];
-  const favorites = useSelector((state) => state.favorites);
-  console.log("🚀 ~ App ~ favorites:", favorites);
 
   return (
-    <div>
-      <h1>Recipe App</h1>
+    <section>
+      <Header />
       <div>
-        {recipes?.map((recipe) => (
-          <RecipeItem recipe={recipe} key={recipe.id} />
-        ))}
+        <div>
+          {recipes?.map((recipe) => (
+            <RecipeItem recipe={recipe} key={recipe.id} />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

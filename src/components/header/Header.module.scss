@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    justify-content: end;
+    margin: 20px;
+    color: blueviolet;
+
+    .number {
+        background: blueviolet;
+        color: black;
+        margin-left: 0px;
+        padding: 1px 3px;
+        border-radius:  3px;
+    
+    }
+}
+

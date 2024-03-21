@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./RecipeItem.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { actions } from "../store/favorites/favorites.slice";
-import { useActions } from "../hooks/useActions";
+import { actions } from "../../store/favorites/favorites.slice";
+import { useActions } from "../../hooks/useActions";
+import { useFavorites } from "../../hooks/useFavorites";
 
 const RecipeItem = ({ recipe }) => {
-  const favorites = useSelector((state) => state.favorites);
+  const favorites = useFavorites();
 
   const isInFavorites = favorites.some((r) => r.id === recipe.id);
 
