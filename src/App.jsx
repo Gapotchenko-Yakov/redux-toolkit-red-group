@@ -17,7 +17,7 @@ function App() {
   return (
     <section>
       <Header />
-      <User />
+      {/* <User /> */}
       <div>
         <div>
           {recipes?.map((recipe) => (
