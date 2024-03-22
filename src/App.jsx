@@ -6,21 +6,16 @@ import Header from "./components/header/Header";
 import { useFavorites } from "./hooks/useFavorites";
 import User from "./components/user/User";
 import { useGetRecipesQuery } from "./store/api/recipe.api";
+import CreateRecipe from "./components/create-recipe/CreateRecipe";
 
 function App() {
-  // const recipes = [
-  //   { id: 0, name: "Лазанья" },
-  //   { id: 1, name: "Суши" },
-  //   { id: 2, name: "Роллы" },
-  //   { id: 3, name: "Пицца" },
-  // ];
   const { data: recipes, isLoading, error } = useGetRecipesQuery();
-  console.log("🚀 ~ App ~ recipes:", recipes);
 
   return (
     <section>
       <Header />
       {/* <User /> */}
+      <CreateRecipe />
       <div>
         {isLoading ? (
           <div> Loading </div>

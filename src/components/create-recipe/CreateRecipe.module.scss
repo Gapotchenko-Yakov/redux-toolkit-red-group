@@ -1,0 +1,32 @@
+.creationForm {
+    background: indigo;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+
+    .column {
+        display: inline-block;
+    }
+
+    input {
+        color: #232323;
+        background-color: plum;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .creationButton{
+        background-color: #232323;
+        color: plum;
+        font-size: 18px;
+        border-radius: 5px;
+        padding: 5px 15px;
+        &:hover{
+            color: #232323;
+            background-color: plum;
+        }
+    }
+}
+
