@@ -1,7 +1,6 @@
-import { build } from "vite";
 import { api } from "./api";
 
-export const extendedApi = api.injectEndpoints({
+export const recipeApi = api.injectEndpoints({
   endpoints: (builder) => ({
     createRecipe: builder.mutation({
       query: (recipe) => ({
@@ -26,3 +25,10 @@ export const extendedApi = api.injectEndpoints({
     }),
   }),
 });
+
+export const {
+  useGetRecipesQuery,
+  useCreateRecipeMutation,
+  useUpdateRecipeMutation,
+  useDeleteRecipeMutation,
+} = recipeApi;
