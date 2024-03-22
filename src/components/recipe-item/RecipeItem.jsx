@@ -12,7 +12,6 @@ const RecipeItem = ({ recipe }) => {
 
   // const dispatch = useDispatch();
   const { toggleFavourites } = useActions();
-  console.log("🚀 ~ RecipeItem ~ actions:", actions);
 
   return (
     <div className={styles.item}>

@@ -4,6 +4,7 @@ import RecipeItem from "./components/recipe-item/RecipeItem";
 import { useSelector } from "react-redux";
 import Header from "./components/header/Header";
 import { useFavorites } from "./hooks/useFavorites";
+import User from "./components/user/User";
 
 function App() {
   const recipes = [
@@ -16,6 +17,7 @@ function App() {
   return (
     <section>
       <Header />
+      <User />
       <div>
         <div>
           {recipes?.map((recipe) => (
