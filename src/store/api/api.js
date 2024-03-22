@@ -8,7 +8,12 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
   endpoints: (builder) => ({
     getRecipes: builder.query({
-      query: () => "/",
+      query: () => "/", //?_sort=id&_order=desc
+      providesTags: () => [
+        {
+          type: "Recipe",
+        },
+      ],
     }),
   }),
 });

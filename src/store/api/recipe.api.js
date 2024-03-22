@@ -8,6 +8,11 @@ export const recipeApi = api.injectEndpoints({
         url: "/",
         method: "POST",
       }),
+      invalidatesTags: () => [
+        {
+          type: "Recipe",
+        },
+      ],
     }),
     updateRecipe: builder.mutation({
       query: (recipe) => ({
@@ -15,6 +20,11 @@ export const recipeApi = api.injectEndpoints({
         url: "/",
         method: "PUT",
       }),
+      invalidatesTags: () => [
+        {
+          type: "Recipe",
+        },
+      ],
     }),
     deleteRecipe: builder.mutation({
       query: (id) => ({
@@ -22,6 +32,11 @@ export const recipeApi = api.injectEndpoints({
         url: "/",
         method: "DELETE",
       }),
+      invalidatesTags: () => [
+        {
+          type: "Recipe",
+        },
+      ],
     }),
   }),
 });
