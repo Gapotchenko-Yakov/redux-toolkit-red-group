@@ -8,8 +8,16 @@ import User from "./components/user/User";
 import { useGetRecipesQuery } from "./store/api/recipe.api";
 import CreateRecipe from "./components/create-recipe/CreateRecipe";
 
+const userId = 1;
+
 function App() {
-  const { data: recipes, isLoading, error } = useGetRecipesQuery();
+  const {
+    data: recipes,
+    isLoading,
+    error,
+  } = useGetRecipesQuery(undefined, {
+    skip: !userId,
+  });
 
   return (
     <section>
