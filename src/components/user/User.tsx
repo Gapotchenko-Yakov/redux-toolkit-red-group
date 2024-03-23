@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
 
 const User = () => {
-  const { isLoading, error, user } = useSelector((state) => state.user);
+  const { isLoading, error, user } = useTypedSelector((state) => state.user);
   const { getUserById } = useActions();
 
   if (isLoading) {
@@ -11,12 +12,12 @@ const User = () => {
   }
 
   if (error) {
-    return <div>{error.message}</div>;
+    return <div>{error.toString()}</div>;
   }
 
   return (
     <div>
-      <button onClick={() => getUserById()}>Get User</button>
+      <button onClick={() => getUserById(0)}>Get User</button>
       <table>
         {Object.keys(user).map((prop) => (
           <tr key={prop}>

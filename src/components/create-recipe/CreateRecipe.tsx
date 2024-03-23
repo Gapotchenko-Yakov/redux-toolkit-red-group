@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import styles from "./CreateRecipe.module.scss";
 import { useCreateRecipeMutation } from "../../store/api/recipe.api";
+import { IRecipeData } from "../../types/recipe.types";
 
 const defaultValue = {
   name: "",
@@ -8,11 +9,11 @@ const defaultValue = {
 };
 
 const CreateRecipe = () => {
-  const [recipe, setRecipe] = useState(defaultValue);
+  const [recipe, setRecipe] = useState<IRecipeData>(defaultValue);
 
   const [createRecipe, result] = useCreateRecipeMutation();
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("recipe", recipe);
     createRecipe(recipe).then(() => setRecipe(defaultValue));

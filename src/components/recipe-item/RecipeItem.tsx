@@ -4,8 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../store/favorites/favorites.slice";
 import { useActions } from "../../hooks/useActions";
 import { useFavorites } from "../../hooks/useFavorites";
+import { IRecipe } from "../../types/recipe.types";
 
-const RecipeItem = ({ recipe }) => {
+interface IRecipeItem {
+  recipe: IRecipe;
+}
+
+const RecipeItem = ({ recipe }: IRecipeItem) => {
   const favorites = useFavorites();
 
   const isInFavorites = favorites.some((r) => r.id === recipe.id);

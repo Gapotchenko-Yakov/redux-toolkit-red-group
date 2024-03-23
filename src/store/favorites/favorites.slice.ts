@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { IRecipe } from "../../types/recipe.types";
 
-const initialState = [];
+const initialState: IRecipe[] = [];
 
 const favoritesSlice = createSlice({
   name: "favorites",

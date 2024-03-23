@@ -7,17 +7,15 @@ import { useFavorites } from "./hooks/useFavorites";
 import User from "./components/user/User";
 import { useGetRecipesQuery } from "./store/api/recipe.api";
 import CreateRecipe from "./components/create-recipe/CreateRecipe";
-
-const userId = 1;
+import React from "react";
+// const userId = 1;
 
 function App() {
-  const {
-    data: recipes,
-    isLoading,
-    error,
-  } = useGetRecipesQuery(undefined, {
-    skip: !userId,
-  });
+  const { data: recipes, isLoading, error } = useGetRecipesQuery(null);
+
+  // (undefined, {
+  //   skip: !userId,
+  // });
 
   return (
     <section>
@@ -28,7 +26,7 @@ function App() {
         {isLoading ? (
           <div> Loading </div>
         ) : error ? (
-          <div> Error: {error.message} </div>
+          <div> Error </div>
         ) : (
           <div>
             {recipes?.map((recipe) => (
